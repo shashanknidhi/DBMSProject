@@ -1,0 +1,16 @@
+<h1>Netflix Show</h1>
+
+<table border="2">
+<th>ID</th>
+<th>Name</th>
+<th>Season</th>
+<th>Episodes</th>
+{% for x in Show %}
+<tr>
+<td>{{ x.show_id }}</td>
+<td>{{ x.name }}</td>
+<td>{{ x.season }}</td>
+<td>{{ x.episodes }}</td>
+</tr>
+{% endfor %}
+</table>
