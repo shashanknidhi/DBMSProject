@@ -1,1 +1,220 @@
-<p>Hello World</p>
+<html>
+<head>
+    <title>Netflix show tracker</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        
+      h1{text-align:center;
+        font-family: 'Times New Roman', Times, serif;}
+      h5{text-align:center;}
+        .grid-container {
+        display: grid;
+        column-gap: 50px;
+        row-gap: 60px;
+        grid-template-columns: auto auto auto auto;
+        background-color: #030404;
+        padding: 10px;
+        margin-left: 40px;
+        margin-right: 90px;
+        justify-content: center;
+        text-justify: newspaper;
+        margin-top: 100px;
+}
+        .grid-item {
+        background-color: rgba(237, 226, 226, 0.8);
+        border: 10px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 18px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+}
+        button.friends-button{
+            position: relative;
+            bottom: 8px;
+            justify-content: center;
+        }
+        button.big-bang-button{
+            position: relative;
+            bottom: 8px;
+            justify-content: center;
+        }
+        button.office-button{
+            position: relative;
+            bottom: 8px;
+            justify-content: center;
+        }
+        button.b99{
+            position: relative;
+            bottom: 8px;
+            justify-content: center;
+        }
+        button.stranger-things-button{
+            position: relative;
+            bottom: 8px;
+            justify-content: center;
+        }
+        button.bbad{
+            position: relative;
+            bottom: 8px;
+            justify-content: center;
+        }
+        button.peaky-blinders{
+            position: relative;
+            bottom: 8px;
+            justify-content: center;
+        }
+        button.tenet-button{
+            position: relative;
+            bottom: 8px;
+            justify-content: center;
+
+        }
+         .topnav a {
+            float: left;
+            color: rgb(237, 105, 10);
+            
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            margin-right: 0px;
+            
+            }
+            .topnav{
+                margin-left: 1100px;
+                color:rgb(237, 105, 10) ;
+            }
+a{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body style="background-color: #030404;">
+    
+    <h1 style="color:rgb(237, 105, 10);">Track your Netflix series and movies!</h1>
+    <br/>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#Add show">Add show</a>
+        <a href="#View shows">View shows</a>
+        <a href="wishlist/">Wish list</a>
+    </div>
+    <div class="grid-container">
+
+        <div class="grid-item" style="width: 15rem;">
+            <img class="friends-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDcSrrqm0Fx9lDT0SfVvaJkK3IIKyxCOWDg&usqp=CAU" 
+            width = "250" height = "180" alt="friends image cap">
+            <div class="card-body-1">
+            <h5 id="friend-title">Friends</h5>
+            <button id="add-button-1">Add to Wish list</button>
+        </div>
+        </div>
+
+        <div class="grid-item" style="width: 15rem;">
+            <img class="big-bang-img" src="https://cdn.thetealmango.com/wp-content/uploads/2021/07/bbt-theme.png" 
+            width = "250" height = "180"
+            alt="big bang theory image">
+            <div class="card-body-2">
+            <h5 id="big bang-title" >The Big Bang Theory</h5>
+            <button id="add-button-2">Add to Wish list</button>
+            </div>
+        </div>
+
+        <div class="grid-item" style="width: 15rem;">
+            <img class="stranger-things-img" src="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQa82SXtuPjaBo68E43Ii7t7YL6uXHCOslWuO5sb_gyhlwHj66UKt4gzupamC4fQ_ns0P6oO9ISQZ4usg1NCQVj7DsuyEson1DE4N1JsRWvmsu-T8-nMcEoSN58qw2JgImdc1JiNqMxfYGOK_hlsKvhbap9A.jpg?r=e2c" 
+            width = "250" height = "180"
+            alt="stranger things image">
+            <div class="card-body-3">
+            <h5 id="stranger things-title" >Stranger Things</h5>
+            <button id="add-button-3" >Add to Wish list</button>
+            </div>
+        </div>
+
+        <div class="grid-item" style="width: 15rem;">
+            <img class="office-img" src="https://deadline.com/wp-content/uploads/2021/08/NUP_192694_0001.jpg" 
+            width = "250" height = "180"
+            alt="the-office-image">
+            <div class="card-body-4">
+            <h5 id="office-title" >The Office</h5>
+            <button id="add-button-4" >Add to Wish list</button>
+            </div>
+        </div>
+
+        <div class="grid-item" style="width: 15rem;">
+            <img class="b99-img" src="https://www.denofgeek.com/wp-content/uploads/2017/01/brooklyn_nine-nine_header.jpg?fit=1200%2C675" 
+            width = "250" height = "180"
+            alt="b99-image">
+            <div class="card-body-5">
+            <h5 id="b99-title" >Brooklyn Nine-Nine</h5>
+            <button id="add-button-5">Add to Wish list</button>
+            </div>
+        </div>
+
+        <div class="grid-item" style="width: 15rem;">
+            <img class="breaking-bad-img" src="https://images.indianexpress.com/2018/01/breaking-bad-7591.jpg" 
+            width = "250" height = "180"
+            alt="bbad-image">
+            <div class="card-body-6">
+            <h5 id="bbad-title" >Breaking Bad</h5>
+            <button id="add-button-6">Add to Wish list</button>
+            </div>
+        </div>
+        
+        <div class="grid-item" style="width: 15rem;">
+            <img class="peaky-blinders-img" src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/02/Peaky-Blinders-Cast-and-Character-Guide.jpg?q=50&fit=contain&w=1500&h=750&dpr=1.5" 
+            width = "250" height = "180"
+            alt="pb-image">
+            <div class="card-body-7">
+            <h5 id="pb-title" >Peaky Blinders</h5>
+            <button id="add-button-7">Add to Wish list</button>
+            </div>
+        </div>
+
+        <div class="grid-item" style="width: 15rem;">
+            <img class="tenet-img" src="https://cdn.mos.cms.futurecdn.net/wJ4s9FFL6FdxAoKixtr4FS-1200-80.jpg" 
+            width = "250" height = "180"
+            alt="pb-image">
+            <div class="card-body-8">
+            <h5 id="tenet-title" >Tenet</h5>
+            <button id="add-button-8">Add to Wish list</button>
+            </div>
+        </div>
+
+    </div>
+    
+    
+    <script>
+        
+        // function myfunc() {
+            
+
+        //     //alert("Added to Wish List");
+        //     var id = document.getElementsByTagName("h5")[0].id;
+        //     const text = document.getElementById(id).innerHTML;
+        //     console.log(text);
+        //     var data = {csrfmiddlewaretoken: "{{ csrf_token }}" ,"title": text};
+            
+        //     $.post("{% url 'addtowishlist' %}",data,function(response){
+        //         alert(response);
+        //     });
+        // }
+        $("button").on("click", function() {
+            let button_id = this.id;
+            current_id = button_id.charAt(button_id.length - 1);
+            const h5_id = ["friend-title", "big bang-title", "stranger things-title", "office-title", "b99-title", "bbad-title", "pb-title", "tenet-title"];
+            const text = document.getElementById(h5_id[current_id-1]).innerHTML;
+            console.log(text);
+            var data = {csrfmiddlewaretoken: "{{ csrf_token }}" ,"title": text};
+            
+            $.post("{% url 'addtowishlist' %}",data,function(response){
+                alert("TV Show Added to Wish List Successfully");
+             });
+        });
+    </script>
+    <script>
+        
+    </script>
+
+
+</body>
+</html>
