@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.urls import reverse
 
+
 from .models import show, user_progress
 # Create your views here.
 def index(request):
@@ -36,23 +37,27 @@ def displayshow(request):
 
 def wishlist(request):
     template = loader.get_template('wishlist.html')
+    
     shows = user_progress.objects.all().values()
+    
     context = {
-        "shows":shows,
-    }
+            "shows":shows,
+        }
     return HttpResponse(template.render(context,request))
 
 def addtowishlist(request):
     # print('Hi')
     #This should add that movie to the wish list
     #render same template
-    
+    all_shows = []
     cshow = request.POST['title']
+    all_shows.append(cshow) #add the show to the list
     print(cshow)
     cshows = show.objects.get(name = cshow, season = 1)
     # print(type(cshows))
-    # print(cshows)
+        # print(cshows)
     new_show = user_progress(show_name=cshows.name,season=1,episodes = 1)
     new_show.save()
+    
     return HttpResponseRedirect(reverse('index'))
 

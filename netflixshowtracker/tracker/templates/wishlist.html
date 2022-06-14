@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Wish List</h1>
-    <table border="1">
+    <table border="4">
         {% for show in shows %}
         <tr>
         <td>{{ show.show_name }}</td>
@@ -17,5 +17,21 @@
         </tr>
         {% endfor %}
         </table>
+        
 </body>
 </html>
+<script>
+function findValueInRow() {
+    table = document.getElementById("table2");
+    var rows = table.rows;
+    for (var i = 1; i < rows.length; i++) {
+      var cols = rows[i].cells;
+      for (var c = 0; c < cols.length; c++) {
+        if (cols[c].innerText == 'RESERVED') {
+          return cols[0].innerHTML;
+        }
+      }
+    }
+    return '';
+  }
+  </script>
